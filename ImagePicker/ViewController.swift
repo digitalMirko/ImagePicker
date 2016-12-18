@@ -19,17 +19,17 @@ class ViewController: UIViewController {
     @IBAction func chooseImage(_ sender: Any) {
         
         // give user choice - camera or photolibrary
-        
+        // pops up from bottom
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
-        
+        // Camera Btn option
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
             
         }))
-        
+        // Photo Library Btn option
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
-            
+
         }))
-        
+        // Cancel Btn option
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
