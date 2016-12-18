@@ -22,19 +22,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // imagePickerController
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
+        
         // give user choice - camera or photolibrary
         // pops up from bottom
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
         // Camera Btn option
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
-            imagePickerController.sourceType = .camera
-            self.present(imagePickerController,animated: true, completion: nil)
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController,animated: true, completion: nil)
+            } else {
+                print("Camera unit not available")
+            }
         }))
+        
         // Photo Library Btn option
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController,animated: true, completion: nil)
         }))
+        
         // Cancel Btn option
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
