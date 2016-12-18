@@ -1,6 +1,7 @@
 //
 //  ViewController.swift
 //  ImagePicker
+//  This program allows you to use UIImagePickerController to add photos from your "Photo Library" or "Camera into your app.
 //
 //  Created by Mirko Cukich on 12/17/16.
 //  Copyright © 2016 Digital Mirko. All rights reserved.
@@ -13,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
